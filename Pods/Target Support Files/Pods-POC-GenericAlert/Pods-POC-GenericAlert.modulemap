@@ -1,0 +1,6 @@
+framework module Pods_POC_GenericAlert {
+  umbrella header "Pods-POC-GenericAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}

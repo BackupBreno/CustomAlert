@@ -12,9 +12,16 @@
 		559315031FC3ED7500EC3B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559315011FC3ED7500EC3B11 /* Main.storyboard */; };
 		559315051FC3ED7500EC3B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559315041FC3ED7500EC3B11 /* Assets.xcassets */; };
 		559315081FC3ED7500EC3B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559315061FC3ED7500EC3B11 /* LaunchScreen.storyboard */; };
+		559315131FC3EDC000EC3B11 /* AlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559315121FC3EDC000EC3B11 /* AlertDelegate.swift */; };
+		559315151FC3F12900EC3B11 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559315141FC3F12900EC3B11 /* AlertView.swift */; };
+		559801531FC8635300B7728B /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559801521FC8635300B7728B /* CALayer.swift */; };
+		55FE87061FC3FCE200943226 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FE87051FC3FCE200943226 /* CustomView.xib */; };
+		55FE87081FC3FD2200943226 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE87071FC3FD2200943226 /* CustomView.swift */; };
+		95BB52B56667F7EFB9EDC376 /* Pods_POC_GenericAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE81FC6D1B4090354726B1B2 /* Pods_POC_GenericAlert.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		373562A8CD86854615F355C7 /* Pods-POC-GenericAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC-GenericAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-POC-GenericAlert/Pods-POC-GenericAlert.release.xcconfig"; sourceTree = "<group>"; };
 		559314FA1FC3ED7500EC3B11 /* POC-GenericAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POC-GenericAlert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		559314FD1FC3ED7500EC3B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		559314FF1FC3ED7500EC3B11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,13 @@
 		559315041FC3ED7500EC3B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		559315071FC3ED7500EC3B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		559315091FC3ED7500EC3B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		559315121FC3EDC000EC3B11 /* AlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDelegate.swift; sourceTree = "<group>"; };
+		559315141FC3F12900EC3B11 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		559801521FC8635300B7728B /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		55FE87051FC3FCE200943226 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		55FE87071FC3FD2200943226 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		98165685E279B53D24C3048E /* Pods-POC-GenericAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC-GenericAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POC-GenericAlert/Pods-POC-GenericAlert.debug.xcconfig"; sourceTree = "<group>"; };
+		FE81FC6D1B4090354726B1B2 /* Pods_POC_GenericAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POC_GenericAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BB52B56667F7EFB9EDC376 /* Pods_POC_GenericAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +55,8 @@
 			children = (
 				559314FC1FC3ED7500EC3B11 /* POC-GenericAlert */,
 				559314FB1FC3ED7500EC3B11 /* Products */,
+				CA465FD9388FA114D2C298C3 /* Pods */,
+				6FBFCC6DD95B722960E38ACE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,68 @@
 		559314FC1FC3ED7500EC3B11 /* POC-GenericAlert */ = {
 			isa = PBXGroup;
 			children = (
-				559314FD1FC3ED7500EC3B11 /* AppDelegate.swift */,
-				559314FF1FC3ED7500EC3B11 /* ViewController.swift */,
-				559315011FC3ED7500EC3B11 /* Main.storyboard */,
-				559315041FC3ED7500EC3B11 /* Assets.xcassets */,
-				559315061FC3ED7500EC3B11 /* LaunchScreen.storyboard */,
 				559315091FC3ED7500EC3B11 /* Info.plist */,
+				559314FD1FC3ED7500EC3B11 /* AppDelegate.swift */,
+				559315011FC3ED7500EC3B11 /* Main.storyboard */,
+				559315111FC3ED9F00EC3B11 /* Alert */,
+				559315101FC3ED8F00EC3B11 /* Controllers */,
+				5593150F1FC3ED7F00EC3B11 /* Supporting Files */,
 			);
 			path = "POC-GenericAlert";
+			sourceTree = "<group>";
+		};
+		5593150F1FC3ED7F00EC3B11 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				559315041FC3ED7500EC3B11 /* Assets.xcassets */,
+				559315061FC3ED7500EC3B11 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		559315101FC3ED8F00EC3B11 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				559314FF1FC3ED7500EC3B11 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		559315111FC3ED9F00EC3B11 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				55FE87041FC3FCAF00943226 /* View */,
+				559315121FC3EDC000EC3B11 /* AlertDelegate.swift */,
+				559315141FC3F12900EC3B11 /* AlertView.swift */,
+				559801521FC8635300B7728B /* CALayer.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		55FE87041FC3FCAF00943226 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55FE87051FC3FCE200943226 /* CustomView.xib */,
+				55FE87071FC3FD2200943226 /* CustomView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6FBFCC6DD95B722960E38ACE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE81FC6D1B4090354726B1B2 /* Pods_POC_GenericAlert.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA465FD9388FA114D2C298C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98165685E279B53D24C3048E /* Pods-POC-GenericAlert.debug.xcconfig */,
+				373562A8CD86854615F355C7 /* Pods-POC-GenericAlert.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5593150C1FC3ED7500EC3B11 /* Build configuration list for PBXNativeTarget "POC-GenericAlert" */;
 			buildPhases = (
+				69D2CD60F4258D9F2F96A814 /* [CP] Check Pods Manifest.lock */,
 				559314F61FC3ED7500EC3B11 /* Sources */,
 				559314F71FC3ED7500EC3B11 /* Frameworks */,
 				559314F81FC3ED7500EC3B11 /* Resources */,
+				5421F9A0F5D99DCC16B17C27 /* [CP] Embed Pods Frameworks */,
+				B37EFF11DE1EB3279D09E3D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				559315081FC3ED7500EC3B11 /* LaunchScreen.storyboard in Resources */,
+				55FE87061FC3FCE200943226 /* CustomView.xib in Resources */,
 				559315051FC3ED7500EC3B11 /* Assets.xcassets in Resources */,
 				559315031FC3ED7500EC3B11 /* Main.storyboard in Resources */,
 			);
@@ -131,12 +206,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5421F9A0F5D99DCC16B17C27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-POC-GenericAlert/Pods-POC-GenericAlert-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-POC-GenericAlert/Pods-POC-GenericAlert-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69D2CD60F4258D9F2F96A814 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-POC-GenericAlert-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B37EFF11DE1EB3279D09E3D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-POC-GenericAlert/Pods-POC-GenericAlert-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		559314F61FC3ED7500EC3B11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FE87081FC3FD2200943226 /* CustomView.swift in Sources */,
 				559315001FC3ED7500EC3B11 /* ViewController.swift in Sources */,
+				559315151FC3F12900EC3B11 /* AlertView.swift in Sources */,
+				559801531FC8635300B7728B /* CALayer.swift in Sources */,
+				559315131FC3EDC000EC3B11 /* AlertDelegate.swift in Sources */,
 				559314FE1FC3ED7500EC3B11 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +405,7 @@
 		};
 		5593150D1FC3ED7500EC3B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98165685E279B53D24C3048E /* Pods-POC-GenericAlert.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +421,7 @@
 		};
 		5593150E1FC3ED7500EC3B11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 373562A8CD86854615F355C7 /* Pods-POC-GenericAlert.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
