@@ -9,10 +9,12 @@
 import UIKit
 
 class AlertView: UIView, Alert {
-
+    
     var backgroundView = UIView()
     
     var dialogView = UIView()
+    
+    var modal: Bool = false
     
     var height: CGFloat = 0
     
@@ -22,6 +24,29 @@ class AlertView: UIView, Alert {
     
     var buttons: [UIButton] = []
     var separators: [UIView] = []
+    
+    @IBInspectable var blurTintColor: UIColor! {
+        set {
+            toolbar.barTintColor = blurTintColor
+        }
+        get {
+            return toolbar.barTintColor
+        }
+    }
+    
+    lazy var toolbar:UIToolbar = {
+        
+        self.clipsToBounds = true
+        
+        let toolbar = UIToolbar(frame: self.bounds)
+        toolbar.translatesAutoresizingMaskIntoConstraints = false
+        self.insertSubview(toolbar, at: 0)
+        let views = ["toolbar": toolbar]
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[toolbar]|", options: [], metrics: nil, views: views))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[toolbar]|", options: [], metrics: nil, views: views))
+        
+        return toolbar
+    }()
     
     func dialogViewAddSubView(_ view: UIView) {
         
@@ -55,12 +80,14 @@ class AlertView: UIView, Alert {
         titleLabel.textAlignment = .center
         self.dialogViewAddSubView(titleLabel)
         
-        dialogView.frame.origin = CGPoint(x: 32, y: frame.height)
-        dialogView.frame.size = CGSize(width: frame.width-64, height: self.height)
-        dialogView.backgroundColor = UIColor.white
-        dialogView.layer.cornerRadius = 15
-        dialogView.clipsToBounds = true
-        addSubview(dialogView)
+        self.dialogView.frame.origin = CGPoint(x: 32, y: frame.height)
+        self.dialogView.frame.size = CGSize(width: frame.width-64, height: self.height)
+        self.dialogView.clipsToBounds = true
+        self.dialogView.backgroundColor = .white
+        self.dialogView.layer.cornerRadius = 10
+        self.dialogView.alpha = 0
+        self.dialogView.blurTin
+        self.addSubview(self.dialogView)
     }
     
     override init(frame: CGRect) {
@@ -102,7 +129,7 @@ class AlertView: UIView, Alert {
         self.dialogViewAddSubView(separator)
         
         view.frame = self.getNextFrame(x: 8, width: self.width - 16, height: CGFloat(height))
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 10
         self.dialogViewAddSubView(view)
         
         self.reload()
@@ -155,8 +182,6 @@ class AlertView: UIView, Alert {
             self.separators = []
             
             for iButton in 0..<self.buttons.count {
-                
-                print("Indice: \(iButton)")
                 
                 self.buttons[iButton].frame = CGRect(x: (CGFloat(iButton) * unidade), y: y!, width: unidade, height: 30)
                 self.buttons[iButton].frame.size.height += 16

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557423981FC8B2E700165613 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557423971FC8B2E700165613 /* BlurView.swift */; };
 		559314FE1FC3ED7500EC3B11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559314FD1FC3ED7500EC3B11 /* AppDelegate.swift */; };
 		559315001FC3ED7500EC3B11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559314FF1FC3ED7500EC3B11 /* ViewController.swift */; };
 		559315031FC3ED7500EC3B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559315011FC3ED7500EC3B11 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		373562A8CD86854615F355C7 /* Pods-POC-GenericAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC-GenericAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-POC-GenericAlert/Pods-POC-GenericAlert.release.xcconfig"; sourceTree = "<group>"; };
+		557423971FC8B2E700165613 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		559314FA1FC3ED7500EC3B11 /* POC-GenericAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POC-GenericAlert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		559314FD1FC3ED7500EC3B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		559314FF1FC3ED7500EC3B11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		557423961FC8B2D800165613 /* BlurView */ = {
+			isa = PBXGroup;
+			children = (
+				557423971FC8B2E700165613 /* BlurView.swift */,
+			);
+			path = BlurView;
+			sourceTree = "<group>";
+		};
 		559314F11FC3ED7500EC3B11 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +122,7 @@
 		55FE87041FC3FCAF00943226 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				557423961FC8B2D800165613 /* BlurView */,
 				55FE87051FC3FCE200943226 /* CustomView.xib */,
 				55FE87071FC3FD2200943226 /* CustomView.swift */,
 			);
@@ -266,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55FE87081FC3FD2200943226 /* CustomView.swift in Sources */,
+				557423981FC8B2E700165613 /* BlurView.swift in Sources */,
 				559315001FC3ED7500EC3B11 /* ViewController.swift in Sources */,
 				559315151FC3F12900EC3B11 /* AlertView.swift in Sources */,
 				559801531FC8635300B7728B /* CALayer.swift in Sources */,
