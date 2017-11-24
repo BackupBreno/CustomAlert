@@ -20,10 +20,8 @@ class AlertView: UIView, Alert {
     
     var lastFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     
-    var numButtons: Int = 0
     var buttons: [UIButton] = []
-    var stackViewButtonAlert: UIStackView!
-    var stackViewButtonAlertHeight: CGFloat = 30
+    var separators: [UIView] = []
     
     func dialogViewAddSubView(_ view: UIView) {
         
@@ -60,7 +58,7 @@ class AlertView: UIView, Alert {
         dialogView.frame.origin = CGPoint(x: 32, y: frame.height)
         dialogView.frame.size = CGSize(width: frame.width-64, height: self.height)
         dialogView.backgroundColor = UIColor.white
-        dialogView.layer.cornerRadius = 6
+        dialogView.layer.cornerRadius = 15
         dialogView.clipsToBounds = true
         addSubview(dialogView)
     }
@@ -96,11 +94,6 @@ class AlertView: UIView, Alert {
     }
     
     // MARK: Add Elemets
-    func reloadStackView() {
-        
-        self.stackViewButtonAlert.frame = CGRect(x: 0, y: self.lastFrame.origin.y + self.lastFrame.height + 8, width: self.width, height: self.stackViewButtonAlertHeight)
-    }
-    
     func addViewAlert(view: UIView, height: Float) {
         
         let separator = UIView()
@@ -109,6 +102,7 @@ class AlertView: UIView, Alert {
         self.dialogViewAddSubView(separator)
         
         view.frame = self.getNextFrame(x: 8, width: self.width - 16, height: CGFloat(height))
+        view.layer.cornerRadius = 15
         self.dialogViewAddSubView(view)
         
         self.reload()
@@ -153,7 +147,16 @@ class AlertView: UIView, Alert {
             let y = self.buttons.first?.frame.origin.y
             let unidade = self.width / CGFloat(self.buttons.count)
             
+            for spr in self.separators {
+                
+                spr.removeFromSuperview()
+            }
+            
+            self.separators = []
+            
             for iButton in 0..<self.buttons.count {
+                
+                print("Indice: \(iButton)")
                 
                 self.buttons[iButton].frame = CGRect(x: (CGFloat(iButton) * unidade), y: y!, width: unidade, height: 30)
                 self.buttons[iButton].frame.size.height += 16
@@ -163,6 +166,9 @@ class AlertView: UIView, Alert {
                     let separator = UIView()
                     separator.frame = CGRect(x: (CGFloat(iButton) * unidade), y: y!, width: 1, height: 46)
                     separator.backgroundColor = UIColor.groupTableViewBackground
+                    
+                    self.separators.append(separator)
+                    
                     self.dialogView.addSubview(separator)
                 }
             }
