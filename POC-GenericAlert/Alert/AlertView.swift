@@ -86,7 +86,14 @@ class AlertView: UIView, Alert {
         return self.lastFrame
     }
     
-//    func getNextButtonFrame() -> CGRect
+    func getNextButtonFrame() -> CGRect {
+        
+        let lastButtonFrame = self.buttons.last!.frame
+        
+        let nextFrame = CGRect(x: lastButtonFrame.origin.x + lastButtonFrame.width, y: lastButtonFrame.origin.y, width: 3, height: 30)
+        
+        return nextFrame
+    }
     
     // MARK: Add Elemets
     func reloadStackView() {
@@ -108,54 +115,61 @@ class AlertView: UIView, Alert {
     }
     
     func addButton(title: String, alertMode: Bool = true, viewController: UIViewController, action: Selector) {
-        
-        self.numButtons += 1
-        
-        if let _ = self.stackViewButtonAlert {
-            
-            
-        } else {
+
+        if self.buttons.count == 0 {
             
             let separator = UIView()
             separator.frame = self.getNextFrame(x: 0, width: self.width, height: 1)
             separator.backgroundColor = UIColor.groupTableViewBackground
             self.dialogViewAddSubView(separator)
             
-            self.stackViewButtonAlert = UIStackView()
-            self.stackViewButtonAlert.axis = .horizontal
-            self.stackViewButtonAlert.distribution = .equalSpacing
-            self.stackViewButtonAlert.alignment = .fill
+            let button = UIButton()
+            button.setTitle(title, for: .normal)
+            button.setTitleColor(.blue, for: .normal)
+            button.contentVerticalAlignment = .center
+            button.contentHorizontalAlignment = .center
+            button.addTarget(viewController, action: action, for: .touchUpInside)
+            button.frame = self.getNextFrame(x: 0, width: self.width, height: 30)
+            button.frame.origin.y -= 8
             
-            var frame = self.getNextFrame(x: 0, width: self.width, height: 30)
-            frame.origin.y -= 8
+            self.buttons.append(button)
             
-            self.stackViewButtonAlert.frame = frame
-            self.stackViewButtonAlert.backgroundColor = .blue
-            self.dialogViewAddSubView(self.stackViewButtonAlert)
+            self.dialogViewAddSubView(button)
             
-            self.stackViewButtonAlert.frame.size.height += 8
+            button.frame.size.height += 16
+
+        } else {
             
-            self.reload()
+            let button = UIButton()
+            button.setTitle(title, for: .normal)
+            button.setTitleColor(.blue, for: .normal)
+            button.contentVerticalAlignment = .center
+            button.contentHorizontalAlignment = .center
+            button.addTarget(viewController, action: action, for: .touchUpInside)
+            button.frame = self.getNextButtonFrame()
+            
+            self.buttons.append(button)
+            
+            let y = self.buttons.first?.frame.origin.y
+            let unidade = self.width / CGFloat(self.buttons.count)
+            
+            for iButton in 0..<self.buttons.count {
+                
+                self.buttons[iButton].frame = CGRect(x: (CGFloat(iButton) * unidade), y: y!, width: unidade, height: 30)
+                self.buttons[iButton].frame.size.height += 16
+                
+                if iButton > 0 {
+                    
+                    let separator = UIView()
+                    separator.frame = CGRect(x: (CGFloat(iButton) * unidade), y: y!, width: 1, height: 46)
+                    separator.backgroundColor = UIColor.groupTableViewBackground
+                    self.dialogView.addSubview(separator)
+                }
+            }
+            
+            self.dialogView.addSubview(button)
         }
         
-        let button = UIButton()
-        button.setTitle(title, for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.contentVerticalAlignment = .center
-        button.contentHorizontalAlignment = .center
-        button.addTarget(viewController, action: action, for: .touchUpInside)
-        
-        self.buttons.append(button)
-        
-        for buttonUni in self.buttons {
-            
-            buttonUni.widthAnchor.constraint(equalToConstant: self.width / CGFloat(self.numButtons) - 1.5).isActive = true
-        }
-        
-        self.stackViewButtonAlert.addArrangedSubview(button)
-        
-        self.stackViewButtonAlert.layoutIfNeeded()
-        
-        self.layoutIfNeeded()
+        self.reload()
     }
 }

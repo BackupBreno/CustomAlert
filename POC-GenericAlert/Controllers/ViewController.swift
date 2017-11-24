@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         alert.addViewAlert(view: customView, height: 100)
         alert.addButton(title: "Fechar", viewController: self, action: #selector(self.printButton))
         alert.addButton(title: "Outro", viewController: self, action: #selector(self.printButton))
-//        alert.addButton(title: "Mais", viewController: self, action: #selector(self.printButton))
+        alert.addButton(title: "Mais", viewController: self, action: #selector(self.printButton))
         alert.show(animated: true)
     }
     
